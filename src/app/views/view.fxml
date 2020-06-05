@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="550.0" minWidth="950.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.AppController">
+   <children>
+      <HBox id="hbox-bar" layoutX="7.0" layoutY="8.0" prefHeight="600.0" prefWidth="178.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label text="Paramter kt (MC):" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="385.0" />
+                  <Button fx:id="startButton" layoutX="14.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleStart" prefHeight="25.0" prefWidth="150.0" text="Wykonaj" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="95.0" />
+                  <Label layoutX="17.0" layoutY="122.0" text="Start/Stop:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="75.0" />
+                  <Label layoutX="14.0" layoutY="14.0" text="Grain growth" AnchorPane.leftAnchor="15.0" />
+                  <TextField fx:id="gridField" layoutX="15.0" layoutY="288.0" text="50" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="155.0" />
+                  <TextField fx:id="iterationField" layoutX="16.0" layoutY="347.0" text="50" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="215.0" />
+                  <Label layoutX="14.0" layoutY="261.0" text="Szerokość siatki:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="135.0" />
+                  <Label layoutX="14.0" layoutY="321.0" text="Wysokość siatki:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="195.0" />
+                  <TextArea fx:id="msgBox" editable="false" layoutX="7.0" layoutY="420.0" prefHeight="70.0" prefWidth="149.0" promptText="Message box" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="15.0" />
+                  <CheckBox fx:id="showEnergyBox" layoutX="14.0" layoutY="254.0" mnemonicParsing="false" text="Pokaż rozkład energii" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="255.0" />
+                  <CheckBox fx:id="mcOptimizationCheckbox" layoutX="14.0" layoutY="285.0" mnemonicParsing="false" text="Metoda MC" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="285.0" />
+                  <Label text="Liczba kroków symulacji (MC):" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="325.0" />
+                  <TextField fx:id="mcIterationsField" text="10" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="345.0" />
+                  <TextField fx:id="mcKtField" text="0.1" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="405.0" />
+               </children>
+            </AnchorPane>
+         </children></HBox>
+      <AnchorPane fx:id="gridPane" layoutX="207.0" layoutY="14.0" onMouseClicked="#handleClick" prefHeight="500.0" prefWidth="500.0" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Canvas fx:id="canvas" height="500.0" width="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+      <AnchorPane layoutX="794.0" layoutY="7.0" prefHeight="604.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Warunek brzegowy:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="75.0" />
+            <ChoiceBox fx:id="boundaryConditionType" prefWidth="150.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="95.0" />
+            <Label text="Ilość zarodków:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="135.0" />
+            <TextField fx:id="numberOfGrains" prefHeight="25.0" prefWidth="76.0" text="5" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="155.0" />
+            <Label text="Zarodkowanie:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="195.0" />
+            <ChoiceBox fx:id="nucleationType" prefWidth="150.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="215.0" />
+            <Label text="Promień (z. z promieniem)" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="255.0" />
+            <TextField fx:id="nucleationRadius" promptText="1" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="275.0" />
+            <Label text="Typ sąsiedztw:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="315.0" />
+            <ChoiceBox fx:id="neighbourhoodType" prefWidth="150.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="335.0" />
+            <Label text="Promień (s. z promieniem):" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="375.0" />
+            <TextField fx:id="neighbourhoodRadius" promptText="1" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="395.0" />
+            <TextField fx:id="numberOfGrainsExtra" layoutX="100.0" layoutY="155.0" prefHeight="25.0" prefWidth="70.0" text="5" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="155.0" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

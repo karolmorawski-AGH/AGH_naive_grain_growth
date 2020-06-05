@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.EnergyWindowController">
+   <children>
+      <Canvas fx:id="canvas" height="500.0" layoutX="0.0" layoutY="0.0" width="500.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0" />
+   </children>
+</AnchorPane>
